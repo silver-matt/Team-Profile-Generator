@@ -21,8 +21,8 @@ const addManager = () => {
       },
       {
         type: "input",
-        name: "ID",
-        message: "What is the Manager's ID number?",
+        name: "Id",
+        message: "What is the Manager's Id number?",
       },
       {
         type: "input",
@@ -37,8 +37,8 @@ const addManager = () => {
     ])
     // makes all of the input values available in a single const
     .then((managerInput) => {
-      const { name, ID, email, officeNumber } = managerInput;
-      const manager = new Manager(name, ID, email, officeNumber);
+      const { name, Id, email, officeNumber } = managerInput;
+      const manager = new Manager(name, Id, email, officeNumber);
       teamArray.push(manager);
       console.log(manager);
     });
@@ -61,8 +61,8 @@ const addEmployee = () => {
       },
       {
         type: "input",
-        name: "ID",
-        message: "What is the Employee's ID number?",
+        name: "Id",
+        message: "What is the Employee's Id number?",
       },
       {
         type: "input",
@@ -90,14 +90,14 @@ const addEmployee = () => {
       },
     ])
     .then((employeeInput) => {
-      let { name, ID, email, role, GitHub, school, confirmAddEmployee } =
+      let { name, Id, email, role, GitHub, school, confirmAddEmployee } =
         employeeInput;
       let employee;
       if (role === "Engineer") {
-        employee = new Engineer(name, ID, email, GitHub);
+        employee = new Engineer(name, Id, email, GitHub);
         console.log(employee);
       } else if (role === "Intern") {
-        employee = new Intern(name, ID, email, school);
+        employee = new Intern(name, Id, email, school);
         console.log(employee);
       }
       teamArray.push(employee);
